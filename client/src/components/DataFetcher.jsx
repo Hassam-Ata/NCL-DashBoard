@@ -1,6 +1,6 @@
 // src/App.js
 import React, { useEffect, useState } from 'react';
-
+// Below is the main component
 const DataFetcher = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
