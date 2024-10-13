@@ -5,6 +5,7 @@ import Header from './components/Header';
 import TemperatureCard from './components/TemperatureCard';
 import VibrationCard from './components/VibrationCard';
 import SensorDataTable from './components/SensorDataTable';
+import ThemeToggle from './components/ThemeToggle';
 
 const DataFetcher = () => {
   const [data, setData] = useState([]);
@@ -37,7 +38,8 @@ const DataFetcher = () => {
   const latestData = data.length > 0 ? data[0] : null;
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mx-auto p-4 bg-white text-black dark:bg-gray-900 dark:text-white">
+      <ThemeToggle /> {/* Add the toggle button here */}
       {latestData && (
         <>
           <Header deviceID={latestData.device_ID} timestamp={latestData.timestamp} />
