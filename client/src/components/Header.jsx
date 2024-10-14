@@ -1,14 +1,17 @@
-// src/components/Header.js
 import React from 'react';
+import ThemeToggle from './ThemeToggle';
 
 const Header = ({ deviceID, timestamp }) => {
   return (
-    <div className="text-center">
-      <h2 className="text-4xl font-bold italic text-black mb-4 dark:text-white">
+    <div className="relative text-center mb-8">
+      <h2 className="text-4xl md:text-5xl font-bold italic text-black my-8 dark:text-white">
         Predictive Maintenance Dashboard
       </h2>
-      <header className="bg-blue-600 text-white p-4 mb-8 rounded-lg shadow-lg dark:bg-blue-800">
-        <h1 className="text-3xl">Device ID: {deviceID}</h1>
+      <div className="absolute top-0 right-0 transform -translate-y-2.5">
+        <ThemeToggle />
+      </div>
+      <header className="bg-blue-600 text-white p-4 mt-12 rounded-lg shadow-lg dark:bg-blue-800">
+        <h1 className="text-2xl md:text-3xl">Device ID: {deviceID}</h1>
         <p className="text-lg">Last Updated: {new Date(timestamp).toLocaleString()}</p>
       </header>
     </div>

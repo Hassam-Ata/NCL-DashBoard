@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import TemperatureCard from "./components/TemperatureCard";
 import VibrationCard from "./components/VibrationCard";
 import SensorDataTable from "./components/SensorDataTable";
-import ThemeToggle from "./components/ThemeToggle";
+// import ThemeToggle from "./components/ThemeToggle";
 import Filter from "./components/Filter";
 
 const DataFetcher = () => {
@@ -63,23 +63,23 @@ const DataFetcher = () => {
     );
 
   const renderSearchBar = () => (
-    <div className="flex justify-center items-center my-4 space-x-2">
+    <div className="flex flex-col md:flex-row justify-center items-center my-4 space-x-0 md:space-x-2">
       <input
         type="text"
         placeholder={`Search by ${filterKey}`}
-        className="border rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-2/3"
+        className="border border-gray-600 rounded-md px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 w-full md:w-2/3 dark:text-black"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
       />
       <button
         onClick={handleSearch}
-        className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+        className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 mt-2 md:mt-0"
       >
         Search
       </button>
       <button
         onClick={() => setFilterVisible(!filterVisible)}
-        className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+        className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 mt-2 md:mt-0"
       >
         Filter
       </button>
@@ -106,7 +106,7 @@ const DataFetcher = () => {
 
   return (
     <div className="container mx-auto p-4 bg-white text-black dark:bg-gray-900 dark:text-white">
-      <ThemeToggle />
+      {/* <ThemeToggle /> */}
 
       {filteredData.length > 0 ? (
         <>
